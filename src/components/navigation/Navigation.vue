@@ -1,42 +1,38 @@
 <template>
-    <v-navigation-drawer app>
-        <v-list>
-            <v-list-tile>
-                <v-list-tile-action>
-                    <v-icon>home</v-icon>
-                </v-list-tile-action>
-                <v-list-tile-title>Home</v-list-tile-title>
-            </v-list-tile>
+    <v-navigation-drawer app width="300" permanent>
+        <v-list dense shaped>
+            <v-list-item>
+                <v-list-item-icon>
+                    <v-icon>mdi-home</v-icon>
+                </v-list-item-icon>
+                <v-list-item-title>Home</v-list-item-title>
+            </v-list-item>
             <v-divider />
             <v-list-group
                     v-for="item in items"
                     :key="item.index"
             >
                 <template v-slot:activator>
-                    <v-list-tile>
-                        <v-list-tile-action>
-                            <v-icon size="20">
-                                {{ item.icon }}
-                            </v-icon>
-                        </v-list-tile-action>
-                        <v-list-tile-title>
-                            {{ item.label }}
-                        </v-list-tile-title>
-                    </v-list-tile>
+                    <v-list-item-icon>
+                        <v-icon>
+                            {{ item.icon }}
+                        </v-icon>
+                    </v-list-item-icon>
+                    <v-list-item-content>
+                        <v-list-item-title>{{ item.label }}</v-list-item-title>
+                    </v-list-item-content>
                 </template>
-                <v-list-tile v-for="subitem in item.subitems"
+                <v-list-item v-for="subitem in item.subitems"
                              :key="subitem.index"
                              :to="subitem.url"
                 >
-                    <v-list-tile-action>
-                        <v-icon size="20">
+                    <v-list-item-icon class="ml-5">
+                        <v-icon>
                             {{ subitem.icon }}
                         </v-icon>
-                    </v-list-tile-action>
-                    <v-list-tile-title>
-                        {{ subitem.label }}
-                    </v-list-tile-title>
-                </v-list-tile>
+                    </v-list-item-icon>
+                    <v-list-item-title v-text="subitem.label" />
+                </v-list-item>
             </v-list-group>
         </v-list>
     </v-navigation-drawer>
@@ -51,6 +47,22 @@
             items: [
                 {
                     label: 'Лабораторная 1',
+                    icon: 'mdi-alert',
+                    subitems: [
+                        {
+                            label: 'Задание 1',
+                            icon: 'mdi-alert',
+                            url: '/lab1/task1',
+                        },
+                        {
+                            label: 'Задание 2',
+                            icon: 'mdi-alert',
+                            url: '/lab1/task2',
+                        },
+                    ],
+                },
+                {
+                    label: 'Лабораторная 2',
                     icon: 'mdi-alert',
                     subitems: [
                         {

@@ -13,7 +13,7 @@
     "roboto-fontface": "*",
     "vue": "^2.6.10",
     "vue-router": "^3.0.3",
-    "vuetify": "1.5.18"
+    "vuetify": "^2.0.18"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.11.0",
@@ -24,11 +24,13 @@
     "eslint": "^5.16.0",
     "eslint-plugin-vue": "^5.2.3",
     "lint-staged": "^8.1.5",
+    "sass": "^1.17.4",
+    "sass-loader": "^7.1.0",
     "stylus": "^0.54.5",
     "stylus-loader": "^3.0.2",
     "vue-cli-plugin-vuetify": "^0.6.3",
     "vue-template-compiler": "^2.6.10",
-    "vuetify-loader": "1.2.1"
+    "vuetify-loader": "^1.2.2"
   },
   "gitHooks": {
     "pre-commit": "lint-staged"
