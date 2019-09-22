@@ -14,7 +14,7 @@ export default new Router({
         {
             path: '/lab1/task1',
             name: 'lab1-task1',
-            component: () => import(/* webpackChunkName: "lab1-task1" */ './views/About.vue'),
+            component: () => import(/* webpackChunkName: "lab1-task1" */ './views/Lab1Task1.vue'),
         },
         {
             path: '/lab1/task2',
