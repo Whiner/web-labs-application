@@ -12,21 +12,21 @@
                     <v-row>
                         <v-col class="pa-0 mr-2">
                             <v-text-field
-                                    v-model="studentInfo.surname"
+                                    v-model="localStudentInfo.surname"
                                     outlined
                                     label="Фамилия"
                             />
                         </v-col>
                         <v-col class="pa-0 ml-2 mr-2">
                             <v-text-field
-                                    v-model="studentInfo.name"
+                                    v-model="localStudentInfo.name"
                                     outlined
                                     label="Имя"
                             />
                         </v-col>
                         <v-col class="pa-0 ml-2">
                             <v-text-field
-                                    v-model="studentInfo.patronymic"
+                                    v-model="localStudentInfo.patronymic"
                                     outlined
                                     label="Отчество"
                             />
@@ -34,7 +34,7 @@
                     </v-row>
                     <v-row>
                         <v-col class="pa-0 mr-2">
-                            <v-radio-group v-model="studentInfo.sex"
+                            <v-radio-group v-model="localStudentInfo.sex"
                                            primary
                                            hide-details
                                            class="mt-0"
@@ -70,13 +70,17 @@
                                     />
                                 </template>
                                 <v-date-picker
-                                        v-model="studentInfo.birthDate"
+                                        v-model="localStudentInfo.birthDate"
                                         @input="menu2 = false"
                                 />
                             </v-menu>
                         </v-col>
                         <v-col class="pa-0 ml-2">
-                            <v-text-field v-model="studentInfo.group" outlined label="Группа" />
+                            <v-text-field
+                                    v-model="localStudentInfo.group"
+                                    outlined
+                                    label="Группа"
+                            />
                         </v-col>
                     </v-row>
                 </v-container>
@@ -88,18 +92,9 @@
                             <v-btn block
                                    text
                                    color="success"
-                                   @click="save"
+                                   @click="close"
                             >
-                                Сохранить
-                            </v-btn>
-                        </v-col>
-                        <v-col cols="2" class="py-0">
-                            <v-btn block
-                                   text
-                                   color="error"
-                                   @click="cancel"
-                            >
-                                Отменить
+                                Вернуться
                             </v-btn>
                         </v-col>
                     </v-row>
@@ -110,12 +105,21 @@
 </template>
 
 <script>
+    import { formatDate } from '../../../utils/utils';
+
     export default {
         name: 'StudentInfoDialog',
+        props: {
+            value: {
+                default: () => {
+                },
+                type: Object,
+            },
+        },
         data() {
             return {
                 dialog: false,
-                studentInfo: {
+                localStudentInfo: {
                     sex: '',
                     surname: '',
                     name: '',
@@ -127,22 +131,28 @@
         },
         computed: {
             formattedBirthDate() {
-                if (this.studentInfo.birthDate) {
-                    const date = new Date(this.studentInfo.birthDate);
-                    return `${date.getDate()}.${date.getMonth() + 1}.${date.getFullYear()}`;
+                if (this.localStudentInfo.birthDate) {
+                    return formatDate(new Date(this.localStudentInfo.birthDate));
                 }
                 return 'Не выбрано';
+            },
+        },
+        watch: {
+            value() {
+                this.localStudentInfo = this.value;
+            },
+            localStudentInfo: {
+                deep: true,
+                handler() {
+                    this.$emit('input', this.localStudentInfo);
+                },
             },
         },
         methods: {
             show() {
                 this.dialog = true;
             },
-            save() {
-                this.$emit('data', this.studentInfo);
-                this.dialog = false;
-            },
-            cancel() {
+            close() {
                 this.dialog = false;
             },
         },

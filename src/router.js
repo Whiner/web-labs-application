@@ -12,14 +12,14 @@ export default new Router({
             component: () => import(/* webpackChunkName: "home" */ './views/Home.vue'),
         },
         {
-            path: '/lab1/task1',
-            name: 'lab1-task1',
-            component: () => import(/* webpackChunkName: "lab1-task1" */ './views/Lab1Task1.vue'),
+            path: '/lab1',
+            name: 'lab1',
+            component: () => import(/* webpackChunkName: "lab1" */ './views/Lab1.vue'),
         },
         {
-            path: '/lab1/task2',
-            name: 'lab1-task2',
-            component: () => import(/* webpackChunkName: "lab1-task2" */ './views/About.vue'),
+            path: '/lab2',
+            name: 'lab2',
+            component: () => import(/* webpackChunkName: "lab2" */ './views/About.vue'),
         },
     ],
 });
