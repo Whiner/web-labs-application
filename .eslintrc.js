@@ -13,6 +13,7 @@ module.exports = {
         '@vue/airbnb',
     ],
     rules: {
+        'no-mixed-operators': 'off',
         'default-case': 'off',
         'dot-notation': 'off',
         'lines-between-class-members': 'off',

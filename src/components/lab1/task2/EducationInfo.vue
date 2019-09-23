@@ -1,17 +1,20 @@
 <template>
     <v-card>
         <v-card-title
-                class="title primary white--text pb-3"
+                class="title primary white--text py-3"
         >
             Задание 2
         </v-card-title>
-        <v-card-text>
-            <v-container fluid>
+        <v-card-text class="pt-3">
+            <v-container class="pa-0" fluid>
                 <v-row>
-                    <v-col>
+                    <v-col v-if="sex && birthDate">
                         <p class="mb-0">
                             {{ message() }}
                         </p>
+                    </v-col>
+                    <v-col v-else class="text-center">
+                        Отсутствует информация
                     </v-col>
                 </v-row>
             </v-container>
@@ -28,11 +31,11 @@
         props: {
             sex: {
                 type: String,
-                required: true,
+                default: null,
             },
             birthDate: {
                 type: String,
-                required: true,
+                default: null,
             },
         },
         data() {

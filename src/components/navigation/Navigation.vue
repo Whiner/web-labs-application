@@ -1,8 +1,10 @@
 <template>
-    <v-navigation-drawer app width="300" permanent>
+    <v-navigation-drawer app
+                         permanent
+                         width="300"
+    >
         <v-list dense
-                shaped
-                expanded
+                nav
         >
             <v-list-item>
                 <v-list-item-icon>
@@ -66,7 +68,7 @@
                     icon: 'mdi-file-document-outline',
                     url: '/lab2',
                 },
-                {
+                /*{
                     label: 'Лабораторная 2',
                     icon: 'mdi-alert',
                     subitems: [
@@ -81,7 +83,7 @@
                             url: '/lab1/task2',
                         },
                     ],
-                },
+                },*/
             ],
         }),
         methods: {},

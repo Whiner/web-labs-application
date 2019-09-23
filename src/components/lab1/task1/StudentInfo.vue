@@ -3,10 +3,10 @@
         <v-card-title class="title primary white--text pb-3">
             Задание 1
         </v-card-title>
-        <v-card-text>
+        <v-card-text class="pt-3">
             <v-container fluid pa-0>
                 <v-row>
-                    <v-col>
+                    <v-col v-if="isStudentInfoFull">
                         <p class="mb-0">
                             Я, студент<span v-if="studentInfo.sex === 'female'">ка</span>
                             группы {{ studentInfo.group }} {{ name }},
@@ -14,6 +14,9 @@
                             <span v-if="studentInfo.sex === 'female'">родилась</span>
                             {{ formattedBirthDate }}, это был день {{ birthdayWeekDay }}
                         </p>
+                    </v-col>
+                    <v-col v-else class="text-center">
+                        Отсутствует информация
                     </v-col>
                 </v-row>
             </v-container>
@@ -41,6 +44,15 @@
             };
         },
         computed: {
+            isStudentInfoFull() {
+                return this.studentInfo
+                    && this.studentInfo.sex
+                    && this.studentInfo.group
+                    && this.studentInfo.birthDate
+                    && this.studentInfo.surname
+                    && this.studentInfo.name
+                    && this.studentInfo.patronymic;
+            },
             name() {
                 return `${this.studentInfo.surname} ${this.studentInfo.name.charAt(0)}.${this.studentInfo.patronymic.charAt(0)}.`;
             },
