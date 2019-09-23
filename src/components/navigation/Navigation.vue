@@ -5,7 +5,7 @@
                 expanded
         >
             <v-list-item>
-                <v-list-item-icon class="mr-4 ml-2">
+                <v-list-item-icon>
                     <v-icon>mdi-web</v-icon>
                 </v-list-item-icon>
                 <v-list-item-title>Web лабы</v-list-item-title>
@@ -15,8 +15,8 @@
                 <v-list-group
                         v-if="item.subitems"
                         :key="item.index"
-                        sub-group
                         value="true"
+                        prepend-icon="mdi-alert"
                 >
                     <template v-slot:activator>
                         <v-list-item-content>
@@ -26,8 +26,9 @@
                     <v-list-item v-for="subitem in item.subitems"
                                  :key="subitem.index"
                                  :to="subitem.url"
+                                 sub-item
                     >
-                        <v-list-item-icon>
+                        <v-list-item-icon class="ml-10">
                             <v-icon v-text="subitem.icon" />
                         </v-list-item-icon>
                         <v-list-item-content>
@@ -36,7 +37,7 @@
                     </v-list-item>
                 </v-list-group>
                 <v-list-item v-else :key="item.index" :to="item.url">
-                    <v-list-item-icon class="mr-4 ml-2">
+                    <v-list-item-icon>
                         <v-icon v-text="item.icon" />
                     </v-list-item-icon>
                     <v-list-item-content>
@@ -65,22 +66,22 @@
                     icon: 'mdi-file-document-outline',
                     url: '/lab2',
                 },
-                /* {
-                     label: 'Лабораторная 2',
-                     icon: 'mdi-alert',
-                     subitems: [
-                         {
-                             label: 'Задание 1',
-                             icon: 'mdi-file-tree',
-                             url: '/lab1/task1',
-                         },
-                         {
-                             label: 'Задание 2',
-                             icon: 'mdi-alert',
-                             url: '/lab1/task2',
-                         },
-                     ],
-                 },*/
+                {
+                    label: 'Лабораторная 2',
+                    icon: 'mdi-alert',
+                    subitems: [
+                        {
+                            label: 'Задание 1',
+                            icon: 'mdi-file-tree',
+                            url: '/lab1/task1',
+                        },
+                        {
+                            label: 'Задание 2',
+                            icon: 'mdi-alert',
+                            url: '/lab1/task2',
+                        },
+                    ],
+                },
             ],
         }),
         methods: {},
