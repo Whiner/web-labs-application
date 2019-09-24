@@ -54,7 +54,9 @@
                     && this.studentInfo.patronymic;
             },
             name() {
-                return `${this.studentInfo.surname} ${this.studentInfo.name.charAt(0)}.${this.studentInfo.patronymic.charAt(0)}.`;
+                const firstInitial = this.studentInfo.name.charAt(0);
+                const secondInitial = this.studentInfo.patronymic.charAt(0);
+                return `${this.studentInfo.surname} ${firstInitial}.${secondInitial}.`;
             },
             formattedBirthDate() {
                 return formatDate(new Date(parseISO(this.studentInfo.birthDate)));

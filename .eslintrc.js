@@ -13,12 +13,13 @@ module.exports = {
         '@vue/airbnb',
     ],
     rules: {
+        'max-len': ['error', { code: 120 }],
         'no-mixed-operators': 'off',
         'default-case': 'off',
         'dot-notation': 'off',
         'lines-between-class-members': 'off',
         'no-console': 'off',
-        'no-restricted-globals': 'off', // отключено из-за бага https://github.com/eslint/typescript-eslint-parser/issues/414
+        'no-restricted-globals': 'off', // отключено из-за бага
         'prefer-destructuring': 'off',
         'spaced-comment': 'off',
 

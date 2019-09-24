@@ -21,5 +21,10 @@ export default new Router({
             name: 'lab2',
             component: () => import(/* webpackChunkName: "lab2" */ './views/Lab2.vue'),
         },
+        {
+            path: '/lab3',
+            name: 'lab3',
+            component: () => import(/* webpackChunkName: "lab3" */ './views/Lab3.vue'),
+        },
     ],
 });

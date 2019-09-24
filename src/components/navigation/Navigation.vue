@@ -68,6 +68,11 @@
                     icon: 'mdi-file-document-outline',
                     url: '/lab2',
                 },
+                {
+                    label: 'Лабораторная 3',
+                    icon: 'mdi-file-document-outline',
+                    url: '/lab3',
+                },
                 /*{
                     label: 'Лабораторная 2',
                     icon: 'mdi-alert',
