@@ -87,7 +87,7 @@
             },
             mark() {
                 this.i += 1;
-                if (this.i < this.array.length - 1) {
+                if (this.i < this.array.length) {
                     if (this.array[this.i].value > 7 || this.array[this.i].value % 2 === 0) {
                         this.array[this.i].marked = true;
                         setTimeout(this.mark, 200);
