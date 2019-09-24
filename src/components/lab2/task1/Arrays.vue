@@ -87,13 +87,13 @@
             },
             mark() {
                 this.i += 1;
-                if (this.array[this.i].value > 7 || this.array[this.i].value % 2 === 0) {
-                    this.array[this.i].marked = true;
-                    if (this.i < this.array.length - 1) {
+                if (this.i < this.array.length - 1) {
+                    if (this.array[this.i].value > 7 || this.array[this.i].value % 2 === 0) {
+                        this.array[this.i].marked = true;
+                        setTimeout(this.mark, 200);
+                    } else {
                         setTimeout(this.mark, 200);
                     }
-                } else {
-                    this.mark();
                 }
             },
         },
