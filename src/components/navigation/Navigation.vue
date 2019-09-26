@@ -73,6 +73,11 @@
                     icon: 'mdi-file-document-outline',
                     url: '/lab3',
                 },
+                {
+                    label: 'Лабораторная 4',
+                    icon: 'mdi-file-document-outline',
+                    url: '/lab4',
+                },
                 /*{
                     label: 'Лабораторная 2',
                     icon: 'mdi-alert',
