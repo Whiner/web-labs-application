@@ -1,12 +1,34 @@
 <template>
     <v-card>
         <v-card-title class="title primary white--text pb-3">
-            Задание 1. Рисование SVG
+            Рисование
         </v-card-title>
         <v-card-text>
             <v-container fluid>
-                <v-row>
-                    <v-col cols="1" class="text-center">
+                <v-row justify="center">
+                    <v-col cols="2">
+                        <p class="mb-0">
+                            SVG (прямая вставка)
+                        </p>
+                    </v-col>
+                    <v-col cols="2">
+                        <p class="mb-0 pl-3">
+                            Canvas
+                        </p>
+                    </v-col>
+                    <v-col cols="2">
+                        <p class="mb-0 text-center">
+                            SVG как фон
+                        </p>
+                    </v-col>
+                    <v-col cols="2">
+                        <p class="mb-0 text-center">
+                            SVG как картинка
+                        </p>
+                    </v-col>
+                </v-row>
+                <v-row justify="center">
+                    <v-col cols="2">
                         <svg xmlns="http://www.w3.org/2000/svg"
                              version="1.1"
                              width="100"
@@ -18,7 +40,8 @@
                                          width="100%"
                                          height="100%"
                                 >
-                                    <image xlink:href="../../../assets/texture.jpg"
+                                    <image ref="imagePattern"
+                                           xlink:href="../../../assets/texture.jpg"
                                            x="-25"
                                            y="-20"
                                            width="100"
@@ -35,8 +58,12 @@
                             />
                         </svg>
                     </v-col>
-                    <v-col cols="1">
+                    <v-col cols="2">
                         <canvas ref="canvasField" width="100" height="100" />
+                    </v-col>
+                    <v-col cols="2" class="svg-as-background pa-0" />
+                    <v-col cols="2" class="pa-0 text-center">
+                        <img src="../../../assets/my-svg.svg">
                     </v-col>
                 </v-row>
             </v-container>
@@ -48,20 +75,26 @@
     export default {
         name: 'SvgDrawing',
         mounted() {
-            const canvasField = this.$refs.canvasField;
-            const ctx = canvasField.getContext('2d');
-            const image = new Image();
-            image.src = '../../../assets/texture.jpg';
+            this.$nextTick(() => {
+                const canvasField = this.$refs.canvasField;
+                const ctx = canvasField.getContext('2d');
+                const imagePattern = this.$refs.imagePattern;
 
-            ctx.fillStyle = ctx.createPattern(image, 'no-repeat');
-            ctx.beginPath();
-            ctx.arc(35, 35, 30, 0, Math.PI * 2, true);
-            ctx.closePath();
-            ctx.fill();
+                ctx.fillStyle = ctx.createPattern(imagePattern, '');
+                ctx.beginPath();
+                ctx.arc(35, 35, 30, 0, Math.PI * 2, true);
+                ctx.closePath();
+                ctx.fill();
+            });
         },
     };
 </script>
 
 <style scoped>
-
+    .svg-as-background{
+        background-image: url("../../../assets/my-svg.svg");
+        background-position: center;
+        height:150px;
+        width:160px;
+    }
 </style>

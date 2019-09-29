@@ -1,0 +1,30 @@
+<svg width="160" height="150" xmlns="http://www.w3.org/2000/svg">
+ <!-- Created with Method Draw - http://github.com/duopixel/Method-Draw/ -->
+ <g>
+  <title>background</title>
+  <rect fill="#ffffff" id="canvas_background" height="152" width="162" y="-1" x="-1"/>
+  <g display="none" overflow="visible" y="0" x="0" height="100%" width="100%" id="canvasGrid">
+   <rect fill="url(#gridpattern)" stroke-width="0" y="0" x="0" height="100%" width="100%"/>
+  </g>
+ </g>
+ <g>
+  <title>Layer 1</title>
+  <ellipse ry="49" rx="35" id="svg_1" cy="53.107154" cx="82.323255" stroke-width="0" stroke="#000" fill="#ff7f00"/>
+  <ellipse ry="49" rx="35" id="svg_2" cy="94.588634" cx="81.582514" stroke-width="0" stroke="#000" fill="#ff7f00"/>
+  <ellipse transform="rotate(90.24601745605469 107.50845336914064,72.3664093017578) " ry="49" rx="35" id="svg_3" cy="72.366411" cx="107.50844" stroke-width="0" stroke="#000" fill="#ff7f00"/>
+  <ellipse transform="rotate(-90 53.43436431884768,71.62567138671876) " ry="49" rx="35" id="svg_4" cy="71.625671" cx="53.434365" stroke-width="0" stroke="#000" fill="#ff7f00"/>
+  <path id="svg_8" d="m86.266154,30.15159" opacity="0.5" fill-opacity="null" stroke-opacity="null" stroke-width="1.5" stroke="#000" fill="#FFB27C"/>
+  <path id="svg_10" d="m57.88344,15.637702" opacity="0.5" fill-opacity="null" stroke-opacity="null" stroke-width="0" stroke="#000" fill="#FFB27C"/>
+  <path id="svg_13" d="m59.097148,15.980827c27.7825,9.50656 6.08769,1.96378 25.52902,8.24784c19.44133,6.28406 26.31453,1.57101 26.31453,1.57101c0.78551,-0.19638 -3.73116,-8.05146 -7.85508,-12.56813c-4.12392,-4.51667 -12.37176,-7.65871 -12.37176,-7.65871c0,0 -6.48044,-2.74927 -14.33552,-0.98188c-7.85508,1.76739 -14.92466,9.4261 -14.92466,9.4261c-0.78551,-0.19638 1.57102,-1.57102 -2.35653,1.96377z" fill-opacity="null" stroke-opacity="null" stroke-width="0" stroke="#000" fill="#FFB27C"/>
+  <path stroke="#000" id="svg_14" d="m5.914134,80.073327c0,0 29.11591,19.03978 48.794254,22.84774c19.678334,3.80796 57.027017,15.03141 56.946695,14.91116c0.080322,0.12025 -0.321279,6.33323 -10.762848,17.75711c-10.441569,11.42387 -25.903111,7.01466 -25.983433,6.8944c0.080322,0.12026 -11.164449,-1.88393 -20.401214,-16.31409c-9.236775,-14.43015 -6.425588,-21.04397 -7.027979,-20.04188c-0.602402,1.0021 -20.883137,-3.00628 -27.107915,-8.61801c-6.224777,-5.61172 -8.232783,-4.40921 -14.45756,-17.43643z" stroke-opacity="null" stroke-width="0" fill="#bf5f00"/>
+  <ellipse ry="8.830432" rx="8.830432" id="svg_15" cy="63.989643" cx="67.359568" stroke-opacity="null" stroke-width="0.2" stroke="#000" fill="#ffffff"/>
+  <ellipse stroke="#000" ry="10.908182" rx="11.219843" id="svg_16" cy="63.648586" cx="87.909009" stroke-opacity="null" stroke-width="0.2" fill="#ffffff"/>
+  <ellipse ry="3.116623" rx="3.22051" id="svg_17" cy="66.379054" cx="89.383704" stroke-opacity="null" stroke-width="0.2" stroke="#000" fill="#845335"/>
+  <ellipse ry="0.914718" rx="0.914718" id="svg_18" cy="65.300819" cx="90.492217" stroke-opacity="null" stroke-width="0.2" stroke="#000" fill="#ffffff"/>
+  <ellipse ry="3.116623" rx="3.22051" id="svg_19" cy="66.196111" cx="69.259909" stroke-opacity="null" stroke-width="0.2" stroke="#000" fill="#845335"/>
+  <ellipse ry="0.914718" rx="0.914718" id="svg_20" cy="65.117876" cx="70.368423" stroke-opacity="null" stroke-width="0.2" stroke="#000" fill="#ffffff"/>
+  <path transform="rotate(-9 96.91577148437507,50.91677856445309) " id="svg_21" d="m93.646355,47.438431c-2.922711,1.461355 0.730678,2.009364 0.730678,2.009364c0,0 6.941438,5.114744 6.941438,5.114744c0,0 -4.749405,-8.585463 -7.672116,-7.124108z" stroke-opacity="null" stroke-width="0.2" stroke="#000" fill="#7f3f00"/>
+  <path id="svg_22" d="m64.410051,50.735675c5.845422,-1.826694 0,-2.009364 -0.073064,-2.045894c0.073064,0.03653 -5.955028,2.593902 -7.051044,3.872588c-1.096017,1.278686 1.278686,0 7.124108,-1.826694z" fill-opacity="null" stroke-opacity="null" stroke-width="0.2" stroke="#000" fill="#7f3f00"/>
+  <path id="svg_24" d="m100.039785,73.560159c6.210761,6.028091 6.5761,9.864149 6.5761,9.864149c0,0 -3.653389,-4.384066 -3.726451,-4.420596c0.073063,0.036529 -2.484309,10.448687 -14.175153,11.544704c-11.690844,1.096017 -27.948423,-2.740041 -27.948423,-2.740041c0,0 4.018727,6.39343 4.018727,6.39343c0,0 -5.662752,-8.037455 -5.735816,-8.073984c0.073064,0.036529 19.070685,5.151273 29.482842,2.593901c10.412158,-2.557372 13.152199,-9.68148 13.152199,-9.68148c0,0 0.365339,-2.009364 0.365339,-1.826694c0,0.182669 -8.220124,-9.68148 -2.009364,-3.653389z" fill-opacity="null" stroke-opacity="null" stroke-width="0.2" stroke="#000" fill="#7f3f00"/>
+ </g>
+</svg>
