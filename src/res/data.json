@@ -1,0 +1,22 @@
+[
+  {
+    "name": "Telegram",
+    "icon": "applications/telegram.png",
+    "description": "Telegram is a cloud-based instant messaging and voice over IP service. Telegram client apps are available for Android, iOS, Windows Phone, Windows NT, macOS and Linux. Users can send messages and exchange photos, videos, stickers, audio and files of any type."
+  },
+  {
+    "name": "Intellij IDEA",
+    "icon": "applications/telegram.png",
+    "description": "lool"
+  },
+  {
+    "name": "JetBrains DataGrip",
+    "icon": "applications/telegram.png",
+    "description": "lool"
+  },
+  {
+    "name": "Chrome",
+    "icon": "applications/telegram.png",
+    "description": "lool"
+  }
+]
