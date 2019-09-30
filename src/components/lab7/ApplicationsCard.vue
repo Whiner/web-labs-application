@@ -7,14 +7,24 @@
             <v-container fluid>
                 <v-row>
                     <v-col>
-                        <v-list>
+                        <v-combobox
+                                v-model="category"
+                                :items="categories"
+                                label="Select application category"
+                                clearable
+                        />
+                    </v-col>
+                </v-row>
+                <v-row>
+                    <v-col>
+                        <v-list v-if="filteredItems.length > 0">
                             <v-divider />
-                            <template v-for="(item, index) in items">
+                            <template v-for="(item, index) in filteredItems">
                                 <v-list-item :key="index"
                                              class="application-item"
                                              three-line
                                 >
-                                    <v-list-item-avatar>
+                                    <v-list-item-avatar class="d-flex align-self-center">
                                         <v-img :src="item.icon" />
                                     </v-list-item-avatar>
                                     <v-list-item-content>
@@ -32,6 +42,9 @@
                                 <v-divider :key="-index-1" />
                             </template>
                         </v-list>
+                        <p v-else class="subtitle-1 text-center">
+                            Nothing founded
+                        </p>
                     </v-col>
                 </v-row>
             </v-container>
@@ -41,19 +54,26 @@
 
 <script>
     import data from '../../res/data.json';
+    import category from '../../res/application-category.json';
 
     export default {
         name: 'ApplicationsCard',
         data: () => ({
             items: [],
+            category: null,
+            categories: [],
         }),
+        computed: {
+            filteredItems() {
+                if (this.category) {
+                    return this.items.filter(value => value.category === this.category.value);
+                }
+                return this.items;
+            },
+        },
         created() {
             this.items = data;
-        },
-        methods: {
-            download(url) {
-                console.log(url);
-            },
+            this.categories = category;
         },
     };
 </script>
