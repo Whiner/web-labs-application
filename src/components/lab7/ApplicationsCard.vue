@@ -10,7 +10,10 @@
                         <v-list>
                             <v-divider />
                             <template v-for="(item, index) in items">
-                                <v-list-item :key="index" class="application-item" @click="download(item.url)">
+                                <v-list-item :key="index"
+                                             class="application-item"
+                                             three-line
+                                >
                                     <v-list-item-avatar>
                                         <v-img :src="item.icon" />
                                     </v-list-item-avatar>
@@ -18,6 +21,13 @@
                                         <v-list-item-title>{{ item.name }}</v-list-item-title>
                                         <v-list-item-subtitle v-text="item.description" />
                                     </v-list-item-content>
+                                    <v-list-item-action class="d-flex align-self-center">
+                                        <v-btn icon link :href="item.url">
+                                            <v-icon color="grey lighten-1">
+                                                mdi-download
+                                            </v-icon>
+                                        </v-btn>
+                                    </v-list-item-action>
                                 </v-list-item>
                                 <v-divider :key="-index-1" />
                             </template>

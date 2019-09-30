@@ -2,21 +2,25 @@
   {
     "name": "Telegram",
     "icon": "applications/telegram.png",
-    "description": "Telegram is a cloud-based instant messaging and voice over IP service. Telegram client apps are available for Android, iOS, Windows Phone, Windows NT, macOS and Linux. Users can send messages and exchange photos, videos, stickers, audio and files of any type."
+    "description": "Telegram is a cloud-based instant messaging and voice over IP service. Telegram client apps are available for Android, iOS, Windows Phone, Windows NT, macOS and Linux. Users can send messages and exchange photos, videos, stickers, audio and files of any type.",
+    "url": "https://telegram.org/"
   },
   {
-    "name": "Intellij IDEA",
-    "icon": "applications/telegram.png",
-    "description": "lool"
+    "name": "JetBrains Intellij IDEA",
+    "icon": "applications/idea.png",
+    "description": "IntelliJ IDEA is a Java integrated development environment (IDE) for developing computer software. It is developed by JetBrains (formerly known as IntelliJ), and is available as an Apache 2 Licensed community edition, and in a proprietary commercial edition. Both can be used for commercial development.",
+    "url": "https://www.jetbrains.com/idea/"
   },
   {
     "name": "JetBrains DataGrip",
-    "icon": "applications/telegram.png",
-    "description": "lool"
+    "icon": "applications/datagrip.png",
+    "description": "Meet DataGrip, our new database IDE that is tailored to suit the specific needs of professional SQL developers.",
+    "url": "https://www.jetbrains.com/datagrip/"
   },
   {
     "name": "Chrome",
-    "icon": "applications/telegram.png",
-    "description": "lool"
+    "icon": "applications/chrome.png",
+    "description": "Google Chrome is a cross-platform web browser developed by Google. It was first released in 2008 for Microsoft Windows, and was later ported to Linux, macOS, iOS, and Android. The browser is also the main component of Chrome OS, where it serves as the platform for web apps.",
+    "url": "https://www.google.com/intl/ru/chrome/"
   }
 ]
