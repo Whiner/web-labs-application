@@ -34,6 +34,11 @@
                     url: '/lab4',
                 },
                 {
+                    label: 'Лабораторная 6',
+                    icon: 'mdi-file-document-outline',
+                    url: '/lab6',
+                },
+                {
                     label: 'Лабораторная 7',
                     icon: 'mdi-file-document-outline',
                     url: '/application-catalog',

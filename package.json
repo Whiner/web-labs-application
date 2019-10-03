@@ -14,7 +14,8 @@
     "roboto-fontface": "*",
     "vue": "^2.6.10",
     "vue-router": "^3.0.3",
-    "vuetify": "^2.0.18"
+    "vuetify": "^2.0.18",
+    "ymaps": "^0.2.1"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.11.0",

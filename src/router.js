@@ -36,6 +36,11 @@ export default new Router({
                     name: 'lab4',
                     component: () => import(/* webpackChunkName: "lab4" */ './views/Lab4.vue'),
                 },
+                {
+                    path: '/lab6',
+                    name: 'lab6',
+                    component: () => import(/* webpackChunkName: "lab4" */ './views/Lab6.vue'),
+                },
             ],
         },
 
