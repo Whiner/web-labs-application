@@ -24,8 +24,6 @@
         data() {
             return {};
         },
-        computed: {},
-        methods: {},
     };
 </script>
 
