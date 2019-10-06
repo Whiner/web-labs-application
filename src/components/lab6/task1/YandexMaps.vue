@@ -1,7 +1,7 @@
 <template>
     <v-card>
         <v-card-title class="title primary white--text pb-3">
-            Яндекс карты
+            Построение маршрута на Яндекс картах
         </v-card-title>
         <v-card-text>
             <v-container fluid>

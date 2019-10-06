@@ -18,7 +18,7 @@
                         v-if="item.subitems"
                         :key="item.index"
                         value="true"
-                        prepend-icon="mdi-alert"
+                        :prepend-icon="item.icon"
                 >
                     <template v-slot:activator>
                         <v-list-item-content>

@@ -36,7 +36,18 @@
                 {
                     label: 'Лабораторная 6',
                     icon: 'mdi-file-document-outline',
-                    url: '/lab6',
+                    subitems: [
+                        {
+                            label: 'Задание 1',
+                            icon: 'mdi-map-search   ',
+                            url: '/lab6/task1',
+                        },
+                        {
+                            label: 'Задание 2',
+                            icon: 'mdi-google-analytics',
+                            url: '/lab6/task2',
+                        },
+                    ],
                 },
                 {
                     label: 'Лабораторная 7',
