@@ -14,7 +14,7 @@
 </template>
 
 <script>
-    import ApplicationSiteNavigation from '../components/navigation/ApplicationSiteNavigation.vue';
+    import ApplicationSiteNavigation from '../components/navigation/Lab7Navigation.vue';
     import ApplicationsCard from '../components/lab7/ApplicationsCard.vue';
 
 

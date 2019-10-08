@@ -6,7 +6,7 @@
     import Navigation from './Navigation.vue';
 
     export default {
-        name: 'ApplicationSiteNavigation',
+        name: 'L8Nav',
         components: {
             Navigation,
         },
