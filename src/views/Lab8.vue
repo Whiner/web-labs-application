@@ -2,30 +2,18 @@
     <div class="fill-height">
         <ApplicationSiteNavigation />
         <v-content>
-            <v-container>
-                <v-row>
-                    <v-col>
-                        <ApplicationsCard />
-                    </v-col>
-                </v-row>
-            </v-container>
+            <router-view />
         </v-content>
     </div>
 </template>
 
 <script>
     import ApplicationSiteNavigation from '../components/navigation/Lab8Navigation.vue';
-    import ApplicationsCard from '../components/lab7/ApplicationsCard.vue';
-
 
     export default {
-        name: 'Lab8',
+        name: 'Lab8List',
         components: {
             ApplicationSiteNavigation,
-            ApplicationsCard,
-        },
-        created() {
-
         },
     };
 </script>

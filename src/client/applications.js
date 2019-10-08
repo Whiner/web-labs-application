@@ -1,6 +1,6 @@
-import axios from './axios';
+import { localAxios } from './axios';
 
 // eslint-disable-next-line import/prefer-default-export
-export function getApplications(category) {
-    return axios.get(`/app?category=${category}`);
+export async function getApplications(category) {
+    return localAxios.get(`/app?category=${category || ''}`);
 }

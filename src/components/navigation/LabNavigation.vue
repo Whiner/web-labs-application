@@ -52,24 +52,13 @@
                 {
                     label: 'Лабораторная 7',
                     icon: 'mdi-file-document-outline',
-                    url: '/application-catalog',
+                    url: '/lab7',
                 },
-                /*{
-                    label: 'Лабораторная 2',
-                    icon: 'mdi-alert',
-                    subitems: [
-                        {
-                            label: 'Задание 1',
-                            icon: 'mdi-file-tree',
-                            url: '/lab1/task1',
-                        },
-                        {
-                            label: 'Задание 2',
-                            icon: 'mdi-alert',
-                            url: '/lab1/task2',
-                        },
-                    ],
-                },*/
+                {
+                    label: 'Лабораторная 8',
+                    icon: 'mdi-file-document-outline',
+                    url: '/lab8',
+                },
             ],
         }),
     };

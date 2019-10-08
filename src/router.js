@@ -7,10 +7,29 @@ export default new Router({
     mode: 'history',
     routes: [
         {
-            path: '/application-catalog',
-            name: 'application-catalog',
-            component: () => import(/* webpackChunkName: "home" */ './views/Lab7.vue'),
+            path: '/lab7',
+            name: 'lab7',
+            component: () => import(/* webpackChunkName: "lab7" */ './views/Lab7.vue'),
         },
+        {
+            path: '/lab8',
+            name: 'lab8',
+            component: () => import(/* webpackChunkName: "lab8" */ './views/Lab8.vue'),
+            children: [
+                {
+                    path: '/lab8/list',
+                    name: 'list',
+                    component: () => import(/* webpackChunkName: "lab8-list" */ './views/Lab8_List.vue'),
+                },
+                {
+                    path: '/lab8/settings',
+                    name: 'settings',
+                    component: () => import(/* webpackChunkName: "lab8-settings" */ './views/Lab8_Settings.vue'),
+                },
+
+            ],
+        },
+
         {
             path: '/',
             name: 'main',

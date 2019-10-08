@@ -18,6 +18,16 @@
                     icon: 'mdi-keyboard-return',
                     url: '/',
                 },
+                {
+                    label: 'Приложения',
+                    icon: 'mdi-application',
+                    url: '/lab8/list',
+                },
+                {
+                    label: 'Настройки',
+                    icon: 'mdi-settings',
+                    url: '/lab8/settings',
+                },
             ],
         }),
     };

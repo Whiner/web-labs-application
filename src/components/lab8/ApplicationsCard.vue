@@ -16,16 +16,21 @@
                     </v-col>
                 </v-row>
                 <v-row>
+                    <v-col class="py-0 progress">
+                        <v-progress-linear v-show="loading" :indeterminate="loading" height="3px" />
+                    </v-col>
+                </v-row>
+                <v-row>
                     <v-col>
-                        <v-list v-if="filteredItems.length > 0">
+                        <v-list v-if="items.length > 0">
                             <v-divider />
-                            <template v-for="(item, index) in filteredItems">
+                            <template v-for="(item, index) in items">
                                 <v-list-item :key="index"
                                              class="application-item"
                                              three-line
                                 >
                                     <v-list-item-avatar class="d-flex align-self-center">
-                                        <v-img :src="item.icon" />
+                                        <img :src="getSrc(item.icon)">
                                     </v-list-item-avatar>
                                     <v-list-item-content>
                                         <v-list-item-title>{{ item.name }}</v-list-item-title>
@@ -53,8 +58,8 @@
 </template>
 
 <script>
-    import data from '../../res/data.json';
-    import category from '../../res/application-category.json';
+    import { getApplications } from '../../client/applications';
+    import { getCategories } from '../../client/categories';
 
     export default {
         name: 'ApplicationsCard',
@@ -62,22 +67,54 @@
             items: [],
             category: null,
             categories: [],
+            loading: false,
         }),
-        computed: {
-            filteredItems() {
-                if (this.category) {
-                    return this.items.filter(value => value.category === this.category.value);
-                }
-                return this.items;
+        watch: {
+            category() {
+                this.updateApplications();
             },
         },
         created() {
-            this.items = data;
-            this.categories = category;
+            this.updateApplications();
+            this.updateCategories();
+        },
+        methods: {
+            async updateApplications() {
+                try {
+                    this.loading = true;
+                    const filter = this.category ? this.category.value : null;
+                    this.items = (await getApplications(filter)).data;
+                } catch (e) {
+                    console.log(e);
+                } finally {
+                    this.loading = false;
+                }
+            },
+            async updateCategories() {
+                try {
+                    this.categories = (await getCategories()).data;
+                } catch (e) {
+                    console.log(e);
+                }
+            },
+            getSrc(byteArray) {
+                return `data:image/png;base64,${this.arrayBufferToBase64(byteArray)}`;
+            },
+            arrayBufferToBase64(buffer) {
+                let binary = '';
+                const bytes = new Uint8Array(buffer);
+                const len = bytes.byteLength;
+                for (let i = 0; i < len; i += 1) {
+                    binary += String.fromCharCode(bytes[i]);
+                }
+                return btoa(binary);
+            },
         },
     };
 </script>
 
 <style scoped>
-
+    .progress {
+        height: 3px;
+    }
 </style>
