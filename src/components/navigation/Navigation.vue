@@ -17,7 +17,6 @@
                 <v-list-group
                         v-if="item.subitems"
                         :key="item.index"
-                        value="true"
                         :prepend-icon="item.icon"
                 >
                     <template v-slot:activator>

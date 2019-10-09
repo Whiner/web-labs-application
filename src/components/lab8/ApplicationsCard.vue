@@ -60,6 +60,7 @@
 <script>
     import { getApplications } from '../../client/applications';
     import { getCategories } from '../../client/categories';
+    import { arrayBufferToBase64 } from '../../utils/utils';
 
     export default {
         name: 'ApplicationsCard',
@@ -98,16 +99,7 @@
                 }
             },
             getSrc(byteArray) {
-                return `data:image/png;base64,${this.arrayBufferToBase64(byteArray)}`;
-            },
-            arrayBufferToBase64(buffer) {
-                let binary = '';
-                const bytes = new Uint8Array(buffer);
-                const len = bytes.byteLength;
-                for (let i = 0; i < len; i += 1) {
-                    binary += String.fromCharCode(bytes[i]);
-                }
-                return btoa(binary);
+                return `data:image/png;base64,${arrayBufferToBase64(byteArray)}`;
             },
         },
     };

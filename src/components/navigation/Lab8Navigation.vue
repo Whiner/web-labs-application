@@ -14,17 +14,17 @@
             drawer: null,
             items: [
                 {
-                    label: 'Вернуться к лабораторным',
+                    label: 'Back to labs',
                     icon: 'mdi-keyboard-return',
                     url: '/',
                 },
                 {
-                    label: 'Приложения',
+                    label: 'Applications',
                     icon: 'mdi-application',
                     url: '/lab8/list',
                 },
                 {
-                    label: 'Настройки',
+                    label: 'Settings',
                     icon: 'mdi-settings',
                     url: '/lab8/settings',
                 },

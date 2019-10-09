@@ -57,7 +57,7 @@
                 {
                     label: 'Лабораторная 8',
                     icon: 'mdi-file-document-outline',
-                    url: '/lab8',
+                    url: '/lab8/list',
                 },
             ],
         }),
