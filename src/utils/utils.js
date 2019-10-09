@@ -14,18 +14,16 @@ export function arrayBufferToBase64(buffer) {
     return btoa(binary);
 }
 
-export function getBase64(file) {
-    let uncoded;
-    const reader = new FileReader();
-    reader.readAsDataURL(file);
-    reader.onload = () => { uncoded = reader.result; };
-    reader.onerror = error => console.log('Error: ', error);
-    return uncoded;
-}
-
 export const toBase64 = file => new Promise((resolve, reject) => {
     const reader = new FileReader();
     reader.readAsDataURL(file);
+    reader.onload = () => resolve(reader.result);
+    reader.onerror = error => reject(error);
+});
+
+export const fileToArrayBuffer = file => new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.readAsArrayBuffer(file);
     reader.onload = () => resolve(reader.result);
     reader.onerror = error => reject(error);
 });

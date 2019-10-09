@@ -43,7 +43,6 @@
                                     v-model="category"
                                     :items="categories"
                                     label="Category"
-                                    clearable
                                     hide-details
                                     outlined
                             />
@@ -71,10 +70,19 @@
                         <v-col cols="2" class="py-0">
                             <v-btn block
                                    text
-                                   color="success"
+                                   color="primary"
                                    @click="close"
                             >
-                                Вернуться
+                                Отмена
+                            </v-btn>
+                        </v-col>
+                        <v-col cols="2" class="py-0">
+                            <v-btn block
+                                   text
+                                   color="primary"
+                                   @click="save"
+                            >
+                                Сохранить
                             </v-btn>
                         </v-col>
                     </v-row>
@@ -86,7 +94,8 @@
 
 <script>
     import { getCategories } from '../../client/categories';
-    import { toBase64 } from '../../utils/utils';
+    import { fileToArrayBuffer, toBase64 } from '../../utils/utils';
+    import { addApplication, editApplication } from '../../client/applications';
 
     export default {
         name: 'EditApplicationDialog',
@@ -97,6 +106,7 @@
             categories: [],
             icon: null,
             iconSrc: null,
+            isNew: false,
         }),
         watch: {
             async icon() {
@@ -115,7 +125,13 @@
                 this.iconSrc = await toBase64(this.icon);
             },
             show(application) {
-                this.application = application || {};
+                if (application) {
+                    this.application = application;
+                    this.isNew = false;
+                } else {
+                    this.application = {};
+                    this.isNew = true;
+                }
                 this.dialog = true;
             },
             close() {
@@ -127,6 +143,21 @@
                 } catch (e) {
                     console.log(e);
                 }
+            },
+            async save() {
+                if (this.isNew) {
+                    await this.prepareIcon();
+                    this.application.category = this.category.value;
+                    await addApplication(this.application);
+                } else {
+                    await editApplication(this.application);
+                }
+            },
+            async prepareIcon() {
+                const uint8Array = new Uint8Array(await fileToArrayBuffer(this.icon));
+                const arr = [];
+                uint8Array.forEach(value => arr.push(value));
+                this.application.icon = arr;
             },
         },
     };
