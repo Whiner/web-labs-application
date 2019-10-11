@@ -12,3 +12,7 @@ export function addApplication(application) {
 export function editApplication(application) {
     return localAxios.post('/app/edit', application);
 }
+
+export function deleteApplication(id) {
+    return localAxios.post('/app/delete', { id });
+}
