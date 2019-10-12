@@ -147,8 +147,8 @@
             async updateIconSrc() {
                 this.iconSrc = await toBase64(this.icon);
             },
-            show(application) {
-                this.updateCategories();
+            async show(application) {
+                await this.updateCategories();
                 if (application) {
                     this.application = {
                         name: application.name,
@@ -159,7 +159,8 @@
                     };
                     this.iconSrc = `data:image/png;base64,${arrayBufferToBase64(application.icon)}`;
                     this.iconArrayBuffer = application.icon;
-                    this.category = this.categories.find(value => value.value === application.category).value;
+                    const category = this.categories.find(value => value.value === application.category);
+                    this.category = category ? category.value : null;
                     this.isNew = false;
                 } else {
                     this.application = {};
