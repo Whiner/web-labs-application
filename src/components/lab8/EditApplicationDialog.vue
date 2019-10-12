@@ -152,7 +152,6 @@
                 if (application) {
                     this.application = {
                         name: application.name,
-                        // eslint-disable-next-line no-underscore-dangle
                         id: application._id,
                         url: application.url,
                         description: application.description,

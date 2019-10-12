@@ -189,7 +189,6 @@
             async saveCategory() {
                 if (this.editingCategory) {
                     await editCategory({
-                        // eslint-disable-next-line no-underscore-dangle
                         id: this.editingCategory._id,
                         text: this.categoryField,
                         value: this.editingCategory.value,

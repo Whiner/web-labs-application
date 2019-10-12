@@ -22,6 +22,9 @@ module.exports = {
         'no-restricted-globals': 'off', // отключено из-за бага
         'prefer-destructuring': 'off',
         'spaced-comment': 'off',
+        'no-underscore-dangle': 'off',
+        'import/prefer-default-export': 'off',
+        'no-plusplus': 'off',
 
         indent: ['error', 4, { SwitchCase: 1 }],
         'no-trailing-spaces': ['error', {
