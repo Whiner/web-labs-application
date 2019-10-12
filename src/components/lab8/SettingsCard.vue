@@ -136,7 +136,7 @@
 
 <script>
     import { deleteApplication, getApplications } from '../../client/applications';
-    import { addCategory, editCategory, getCategories } from '../../client/categories';
+    import { addCategory, deleteCategory, editCategory, getCategories } from '../../client/categories';
     import EditApplicationDialog from './EditApplicationDialog.vue';
     import ConfirmDialog from '../ConfirmDialog.vue';
 
@@ -152,6 +152,7 @@
             categories: [],
             deletingItemId: null,
             editingCategory: null,
+            deletingCategory: null,
         }),
         created() {
             this.updateApplications();
@@ -209,12 +210,20 @@
                 this.deletingItemId = id;
             },
             async onDialogConfirm() {
-                await deleteApplication(this.deletingItemId);
-                this.deletingItemId = null;
-                this.updateApplications();
+                if (this.deletingItemId) {
+                    await deleteApplication(this.deletingItemId);
+                    this.deletingItemId = null;
+                    this.updateApplications();
+                }
+                if (this.deletingCategory) {
+                    await deleteCategory(this.deletingCategory);
+                    this.deletingCategory = null;
+                    this.updateCategories();
+                }
             },
             deleteCategory(id) {
-                console.log(id);
+                this.$refs.confirmDialog.show();
+                this.deletingCategory = id;
             },
         },
     };
