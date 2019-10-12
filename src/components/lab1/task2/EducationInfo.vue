@@ -64,7 +64,6 @@
                     .padStart(2, '0')}:${now.getMinutes()
                     .toString()
                     .padStart(2, '0')}`;
-                // eslint-disable-next-line no-plusplus
                 for (let i = this.coupleTimes.length - 1; i >= 0; i--) {
                     if (nowTime >= this.coupleTimes[i]) {
                         if (this.timeDifference(nowTime, this.coupleTimes[i]) > 90) {
