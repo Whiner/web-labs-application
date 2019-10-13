@@ -34,6 +34,11 @@
                     url: '/lab4',
                 },
                 {
+                    label: 'Лабораторная 5',
+                    icon: 'mdi-file-document-outline',
+                    url: 'http://localhost:8080/lab5/Experiments.html',
+                },
+                {
                     label: 'Лабораторная 6',
                     icon: 'mdi-file-document-outline',
                     subitems: [
