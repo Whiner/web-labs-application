@@ -36,7 +36,7 @@
                 {
                     label: 'Лабораторная 5',
                     icon: 'mdi-file-document-outline',
-                    url: 'http://localhost:8080/lab5/Experiments.html',
+                    href: 'http://localhost:8080/lab5/Experiments.html',
                 },
                 {
                     label: 'Лабораторная 6',

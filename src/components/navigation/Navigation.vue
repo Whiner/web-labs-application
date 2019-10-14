@@ -37,7 +37,11 @@
                         </v-list-item-content>
                     </v-list-item>
                 </v-list-group>
-                <v-list-item v-else :key="item.index" :to="item.url">
+                <v-list-item v-else
+                             :key="item.index"
+                             :to="item.url"
+                             :href="item.href"
+                >
                     <v-list-item-icon>
                         <v-icon v-text="item.icon" />
                     </v-list-item-icon>
