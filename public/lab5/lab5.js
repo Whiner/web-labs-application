@@ -5,6 +5,44 @@ function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
+$('#close-dialog').click(() => {
+    $('#dialog').css('display', 'none');
+});
+
+$('.menu-item')
+    .click(function () {
+        $('#dialog').css('display', 'flex');
+        $('#dialog-text').text(
+            $(this)
+                .children()
+                .text()
+        )
+    })
+    .mouseenter(function () {
+        $(this)
+            .animate(
+                {
+                    width: '300px',
+                },
+                {
+                    duration: 'slow',
+                },
+            );
+    })
+    .mouseleave(function () {
+        $(this)
+            .animate(
+                {
+                    width: '100px',
+                },
+                {
+                    duration: 'slow',
+                },
+            );
+    })
+;
+
+
 $('#hide')
     .click(() => {
         $('.mso-normal')
@@ -68,12 +106,12 @@ let j = 0;
 
 $('#show-image')
     .click(() => {
-       $('.image')
+        $('.image')
             .each((index, v) => {
                 if (index % 2 !== 0) {
                     v.style['z-index'] = -1;
                     let top;
-                    if(j % 2 === 0) {
+                    if (j % 2 === 0) {
                         top = '-100px';
                     } else {
                         top = '0px';

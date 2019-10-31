@@ -1,8 +1,43 @@
+.dialog {
+    position: fixed;
+    top: 30%;
+    left: 40%;
+    right: 40%;
+    bottom: 50%;
+    background-color: white;
+    box-shadow: 0 0 5px 1px #8a8886;
+    display: none;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+}
+
+
 .title {
     font-size: 1.2em;
     margin-left: 8px;
     border-bottom: 1px solid black;
 }
+
+.menu {
+    display: flex;
+}
+
+.menu-item {
+    background: linear-gradient(to right, #D32F2F, #d39a49);
+    border: #b5b5b5 solid 1px;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.menu-text {
+    color: white;
+}
+
 
 .button-container {
     display: flex;
